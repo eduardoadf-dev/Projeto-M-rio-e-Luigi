@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ✅ Fonte Mukta importada corretamente -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Mario & Luigi</title>
+</head>
+
+<body>
+    <div class="cabecalho">
+        <img src="./assets/logo-cabecalho.png" alt="logo-cabecalho-mario" />
+        <!-- ✅ Links com href -->
+        <a href="#">Home</a>
+        <a href="#">Fale Conosco</a>
+        <a href="#">Nossos Serviços</a>
+    </div>
+
+    <div class="caixa-principal">
+        <div class="caixa-info-texto">
+            <img src="./assets/logo.png" alt="logo-site-mario" class="logo-mario">
+
+            <p> 🔧 Encanadores Mario & Luigi - Resolvendo Seus Problemas Hidráulicos Com Estilo! 🔧 </p>
+
+            <p>Você já se encontrou em uma situação de emergência com encanamento? Vazamentos inesperados, canos
+                entupidos ou torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o dia!
+                Apresentamos a vocês os encanadores mais famosos do Reino dos Cogumelos - Mario & Luigi!</p>
+
+            <button onclick="mostrarForm()">Entre em contato</button>
+        </div>
+
+        <div class="caixa-logo-luigi-mario">
+            <img src="./assets/mario.png" alt="Mario e Luigi" class="logo-mario-luigi">
+        </div>
+    </div>
+
+    <div class="caixa-video">
+        <video src="./assets/video.mp4" autoplay loop muted></video>
+        <div class="mascara-video"></div>
+    </div>
+
+    <div class="caixa-link-whatsapp">
+        <!-- ✅ Alt adicionado na imagem do WhatsApp -->
+        <a href="https://wa.me/5551999999999" target="_blank" class="link-whatsapp">
+            <img src="./assets/whatsapp.png" alt="Fale conosco pelo WhatsApp" />
+        </a>
+    </div>
+
+    <!-- ✅ Campos com required para validação -->
+    <form
+        class="formulario"
+        action="https://formcarry.com/s/Rld__wL6qqJ"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+        <input placeholder="Seu nome" type="text" name="Nome" required />
+        <input placeholder="Seu e-mail" type="email" name="e-mail" required />
+        <textarea placeholder="Digite seu problema aqui" name="Problema" required></textarea>
+        <button type="submit">Pedir orçamento</button>
+    </form>
+
+    <div class="mascara-formulario" onclick="esconderForm()"></div>
+
+    <!-- ✅ Script movido para dentro do body, antes do fechamento -->
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
