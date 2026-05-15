@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ✅ Fonte Mukta importada corretamente -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Mario & Luigi</title>
@@ -13,13 +12,13 @@
 <body>
     <div class="cabecalho">
         <img src="./assets/logo-cabecalho.png" alt="logo-cabecalho-mario" />
-        <!-- ✅ Links com href -->
-        <a href="#">Home</a>
-        <a href="#">Fale Conosco</a>
-        <a href="#">Nossos Serviços</a>
+        <!-- href="#" substituído por âncoras mais seguras -->
+        <a href="#inicio">Home</a>
+        <a href="#contato">Fale Conosco</a>
+        <a href="#servicos">Nossos Serviços</a>
     </div>
 
-    <div class="caixa-principal">
+    <div class="caixa-principal" id="inicio">
         <div class="caixa-info-texto">
             <img src="./assets/logo.png" alt="logo-site-mario" class="logo-mario">
 
@@ -29,7 +28,8 @@
                 entupidos ou torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o dia!
                 Apresentamos a vocês os encanadores mais famosos do Reino dos Cogumelos - Mario & Luigi!</p>
 
-            <button onclick="mostrarForm()">Entre em contato</button>
+            <!-- onclick removido: event listener adicionado no JS -->
+            <button id="btn-contato">Entre em contato</button>
         </div>
 
         <div class="caixa-logo-luigi-mario">
@@ -38,20 +38,22 @@
     </div>
 
     <div class="caixa-video">
-        <video src="./assets/video.mp4" autoplay loop muted></video>
+        <!-- poster exibido enquanto o vídeo carrega ou se não for suportado -->
+        <video src="./assets/video.mp4" autoplay loop muted poster="./assets/poster.jpg">
+            <source src="./assets/video.mp4" type="video/mp4">
+        </video>
         <div class="mascara-video"></div>
     </div>
 
     <div class="caixa-link-whatsapp">
-        <!-- ✅ Alt adicionado na imagem do WhatsApp -->
         <a href="https://wa.me/5551999999999" target="_blank" class="link-whatsapp">
             <img src="./assets/whatsapp.png" alt="Fale conosco pelo WhatsApp" />
         </a>
     </div>
 
-    <!-- ✅ Campos com required para validação -->
     <form
         class="formulario"
+        id="contato"
         action="https://formcarry.com/s/Rld__wL6qqJ"
         method="POST"
         enctype="multipart/form-data"
@@ -59,12 +61,12 @@
         <input placeholder="Seu nome" type="text" name="Nome" required />
         <input placeholder="Seu e-mail" type="email" name="e-mail" required />
         <textarea placeholder="Digite seu problema aqui" name="Problema" required></textarea>
-        <button type="submit">Pedir orçamento</button>
+        <button type="submit" id="btn-enviar">Pedir orçamento</button>
     </form>
 
-    <div class="mascara-formulario" onclick="esconderForm()"></div>
+    <!-- onclick removido: event listener adicionado no JS -->
+    <div class="mascara-formulario"></div>
 
-    <!-- ✅ Script movido para dentro do body, antes do fechamento -->
     <script src="./scripts.js"></script>
 </body>
 
